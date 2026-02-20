@@ -1,0 +1,356 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>トップページ ワイヤーフレーム</title>
+  <style>
+    :root {
+      --bg: #f1f3f7;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #c7cfde;
+      --white: #ffffff;
+      --hero: #4f72f3;
+      --regions: #b149f5;
+      --story: #f29d38;
+      --meta: #8b97af;
+      --cta: #0ea743;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+      margin: 0;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+    }
+
+    .page {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 20px 16px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+    }
+
+    .lead {
+      margin: 6px 0 18px;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    .section {
+      border: 2px solid var(--line);
+      border-radius: 4px;
+      background: #eef2f8;
+      padding: 10px;
+      margin-bottom: 14px;
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .hero {
+      border-color: var(--hero);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+
+    .box {
+      background: var(--white);
+      border: 1px solid var(--line);
+      padding: 10px;
+    }
+
+    .headline {
+      font-weight: 800;
+      font-size: 24px;
+      margin: 0;
+    }
+
+    .subline {
+      margin: 8px 0 0;
+      font-size: 13px;
+      color: #374151;
+    }
+
+    .desc {
+      margin: 0;
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .placeholder {
+      background: #d9dce3;
+      border: 1px solid #a8b2c7;
+      min-height: 162px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #667188;
+      font-size: 12px;
+      padding: 8px;
+    }
+
+    .btn {
+      display: block;
+      text-align: center;
+      text-decoration: none;
+      font-weight: 800;
+      font-size: 14px;
+      border: 1px solid var(--cta);
+      padding: 12px;
+      margin-top: 8px;
+    }
+
+    .btn-primary {
+      background: var(--cta);
+      color: #fff;
+    }
+
+    .btn-secondary {
+      background: #fff;
+      color: var(--cta);
+    }
+
+    .regions {
+      border-color: var(--regions);
+      background: #f4eefb;
+    }
+
+    .center-copy {
+      text-align: center;
+    }
+
+    .region-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+
+    .card-body {
+      padding: 8px 10px 10px;
+    }
+
+    .chip {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 1px 6px;
+      border-radius: 2px;
+      margin-bottom: 4px;
+      color: #12422a;
+      background: #cef1de;
+      border: 1px solid #95d2ad;
+    }
+
+    .chip-warn {
+      color: #6d4b04;
+      background: #fce7be;
+      border-color: #efc676;
+    }
+
+    .card h3 {
+      margin: 0 0 4px;
+      font-size: 19px;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 12px;
+      color: #374151;
+    }
+
+    .read-more {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      font-weight: 700;
+      color: #0b7f34;
+      text-decoration: none;
+    }
+
+    .story {
+      border-color: var(--story);
+      background: #fef5ec;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      align-items: end;
+    }
+
+    .meta {
+      border-color: var(--meta);
+      background: #edf0f5;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .meta h4 {
+      margin: 0 0 6px;
+      font-size: 13px;
+    }
+
+    .meta ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 12px;
+      color: #374151;
+    }
+
+    @media (max-width: 760px) {
+      .hero-grid,
+      .region-grid,
+      .story-grid,
+      .meta-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .headline {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <h1>トップページ ワイヤーフレーム</h1>
+    <p class="lead">テキストとコンテンツはダミー（レイアウト・コンポーネントのみ）</p>
+
+    <section class="section hero">
+      <p class="section-title">[A] ヒーローセクション / メインビジュアル</p>
+      <div class="hero-grid">
+        <div>
+          <div class="box"><p class="headline">祈りの日本地図を旅する</p></div>
+          <div class="box"><p class="subline">足元に息づき、未来への芽をたどる</p></div>
+          <div class="box">
+            <p class="desc">
+              日本各地の祈りごと、それを支える生産者や地域、
+              再生への歩みを香りの体験として伝えます。
+            </p>
+          </div>
+          <a class="btn btn-primary" href="#">CTA1: 今すぐ地域に触れる予約をする</a>
+          <a class="btn btn-secondary" href="#">CTA2: 日本の香りから旅を開始する</a>
+        </div>
+        <div class="placeholder">メインビジュアル画像<br>（縦横比 3:2 推奨）</div>
+      </div>
+    </section>
+
+    <section class="section regions">
+      <p class="section-title">[B] 体験セクション / 地域を巡る</p>
+      <div class="box center-copy">
+        <h2 class="headline">産地を巡る</h2>
+        <p class="subline">各地のカケラにこそ、生産者の想いと再生が息づいています</p>
+      </div>
+
+      <div class="region-grid">
+        <article class="card">
+          <div class="placeholder">福島 会場紹介の画像</div>
+          <div class="card-body">
+            <span class="chip">福島</span>
+            <h3>葛尾（あたりを）</h3>
+            <p>地域の再生と共に歩む体験を伝え、香りの力を届ける。</p>
+            <a class="read-more" href="#">詳しく見る</a>
+          </div>
+        </article>
+        <article class="card">
+          <div class="placeholder">石川 能登ひば材の画像</div>
+          <div class="card-body">
+            <span class="chip chip-warn">石川</span>
+            <h3>能登ひば（ひこび）</h3>
+            <p>木の香りに宿る記憶と再生の物語を、文化体験として編む。</p>
+            <a class="read-more" href="#">詳しく見る</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section story">
+      <p class="section-title">[C] ストーリーセクション / 復興への取り組み</p>
+      <div class="story-grid">
+        <div class="placeholder">日本の森再生画像<br>（横長イメージ）</div>
+        <div>
+          <div class="box"><h2 class="headline">復興への取り組み</h2></div>
+          <div class="box">
+            <p class="desc">
+              地域に眠る資源から体験を編み直し、香りを通じて文化をつなぐ。
+              売上の一部を活動へ還元し、次世代の担い手づくりを支援します。
+            </p>
+          </div>
+          <a class="btn btn-primary" href="#">もっと詳しく知る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section meta">
+      <p class="section-title">[D] レイアウト仕様メモ</p>
+      <div class="meta-grid">
+        <div class="box">
+          <h4>表示の優先</h4>
+          <ul>
+            <li>ヒーローは2カラム（SPは縦積み）</li>
+            <li>体験カードは同幅2列</li>
+            <li>CTAは強調色で統一</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>デザインガイド</h4>
+          <ul>
+            <li>余白: 8px, 10px</li>
+            <li>色: 青 / 紫 / 橙 / 灰</li>
+            <li>書体: Noto Sans JP</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>レスポンシブ</h4>
+          <ul>
+            <li>タブレットで2カラム維持</li>
+            <li>モバイルは1カラム</li>
+            <li>ボタンは横幅をフルに近づける</li>
+          </ul>
+        </div>
+        <div class="box">
+          <h4>備考</h4>
+          <ul>
+            <li>画像は実運用時に差し替え</li>
+            <li>本文量に応じて行間を調整</li>
+            <li>矢印アイコンは任意で追加</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
