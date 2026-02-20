@@ -1,0 +1,36 @@
+﻿【香りの日本地図を旅する】のWebサイトの構造図プロンプト
+
+トップページ 上部に【今すぐ浅草で体験を予約】、メイン【香りの日本地図を旅する】クリックで日本地図のポータルがひろがり、その中の特産物（日本の農作物と香りをテーマにしたブランド「WANOWA（和の輪）」）をクリックで各種ページに広がる（ひとまず下記2種）
+├──福島県	葛尾村産の紫蘇と生産者の顔と声
+│   ├── 　紫蘇の香り（清涼感とスパイシーさ）や制作過程や効能や用途などのページ
+│   └── 東日本大震災および原発事故からの復興を目指す葛尾村の紹介
+└──石川県	能登地方の能登ひばの木材と生産者の顔と声
+　   ├── 能登ヒバの香り（ウッディ調の落ち着いた深みのある香り）や能登ひばの木材の活用、石川県白山市の蒸留所「EarthRing」と協力し、香りを抽出する工程などの紹介ページ
+ 　  └──令和6年能登半島地震からの復興を目指す地域の人たちの紹介
+
+---
+HTMLファイル命名案
+
+- トップページ: index.html
+- 日本地図ポータルページ: scent-japan-map.html
+
+- 福島県 葛尾村産の紫蘇と生産者ページ: fukushima-katsurao-shiso.html
+- 福島県 紫蘇の香り・制作過程・効能・用途ページ: fukushima-shiso-aroma.html
+- 福島県 復興紹介ページ: fukushima-katsurao-reconstruction.html
+
+- 石川県 能登ひばの木材と生産者ページ: ishikawa-noto-hiba.html
+- 石川県 能登ヒバの香り・抽出工程紹介ページ: ishikawa-noto-hiba-aroma.html
+- 石川県 復興紹介ページ: ishikawa-noto-reconstruction.html
+
+サイト構成図（命名案ベース）
+
+トップページ（index.html）
+├── 日本地図ポータルページ（scent-japan-map.html）
+│   ├── 福島県 葛尾村産の紫蘇と生産者ページ（fukushima-katsurao-shiso.html）
+│   │   ├── 福島県 紫蘇の香り・制作過程・効能・用途ページ（fukushima-shiso-aroma.html）
+│   │   └── 福島県 復興紹介ページ（fukushima-katsurao-reconstruction.html）
+│   └── 石川県 能登ひばの木材と生産者ページ（ishikawa-noto-hiba.html）
+│       ├── 石川県 能登ヒバの香り・抽出工程紹介ページ（ishikawa-noto-hiba-aroma.html）
+│       └── 石川県 復興紹介ページ（ishikawa-noto-reconstruction.html）
+├── ページB（予約導線・今すぐ浅草で体験を予約）
+└── ページC（WANOWAブランド概要）
