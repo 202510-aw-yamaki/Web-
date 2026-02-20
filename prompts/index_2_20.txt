@@ -1,0 +1,39 @@
+index_2_20 メモ（2026-02-20）
+
+1. ここまでの実装方針
+- index.html は Tailwind CSS Play CDN 前提で構築する
+- index.html は長くしすぎない（軽量化を優先）
+- トップページは「予約導線 + 日本地図」を中心にする
+
+2. 現在の構成（合意済み）
+- トップページ＆日本地図: index.html
+  - 上部に「今すぐ浅草で体験を予約」導線（reservation.html）
+  - 日本地図（image/japanmap.png）を背景表示
+  - 地図上に福島・石川のクリック領域を配置
+- 福島モーダル風ページ: fukushima-katsurao-shiso.html
+  - 簡単説明 + 紫蘇イメージ + 生産者の顔（プレースホルダー）
+  - 下層導線:
+    - fukushima-shiso-aroma.html
+    - fukushima-katsurao-reconstruction.html
+- 石川モーダル風ページ: ishikawa-noto-hiba.html
+  - 簡単説明 + 森林イメージ + 生産者の顔（プレースホルダー）
+  - 下層導線:
+    - ishikawa-noto-hiba-aroma.html
+    - ishikawa-noto-reconstruction.html
+
+3. 方針転換でやめたこと
+- index.html 内に dialog モーダルを直接持つ方式は採用しない
+- index.html からモーダルHTML/JSを分離して別ページ化済み
+
+4. 課題認識（レスポンシブ）
+- 背景画像 + absolute配置のクリック領域は、画面サイズ差で位置ズレが起きやすい
+
+5. 次の実装方針（合意）
+- 日本地図をSVG化して、クリック領域の位置ズレを減らす
+- まずは現行のボタン位置をSVG座標で再現する
+- 最終的にはボタンを紫蘇・ヒノキなどのマークに置き換える
+
+6. 調整方法（運用イメージ）
+- 調整は x / y（必要に応じて width / height）を少しずつ変更して詰める
+- 指示ベースで「右に○、上に○」などの微調整を反映していく
+- どの数値を触るかは、実装後に固定ポイントとして明示する
