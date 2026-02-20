@@ -1,19 +1,41 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>福島県 葛尾村産の紫蘇と生産者ページ</title>
-  <style>
-    body {
-      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>福島 / 葛尾村の紫蘇と生産者</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>福島県 葛尾村産の紫蘇と生産者ページ</h1>
-  <p>フォント指定: 能登さん（Noto Sans JP） / 柊さん（Hiragino Sans）</p>
+<body class="min-h-screen bg-black/40 px-4 py-8 text-zinc-800">
+  <main class="mx-auto w-full max-w-2xl rounded-lg border border-zinc-300 bg-white p-6 shadow-2xl">
+    <header class="mb-5 flex items-start justify-between gap-4">
+      <div>
+        <p class="text-xs font-bold tracking-[0.15em] text-zinc-500">FUKUSHIMA</p>
+        <h1 class="text-2xl font-black">葛尾村の紫蘇と生産者</h1>
+      </div>
+      <a href="index.html" class="rounded border border-zinc-400 px-3 py-1 text-sm no-underline">閉じる</a>
+    </header>
+
+    <p class="mb-5 text-sm leading-7 text-zinc-700">
+      葛尾村産の紫蘇は、清涼感のある青さとスパイシーさが共存する香りが特徴です。
+      生産者の手仕事と地域の背景を、体験とともに紹介します。
+    </p>
+
+    <section class="mb-6 grid gap-3 sm:grid-cols-2">
+      <article class="rounded border border-zinc-200 p-3">
+        <h2 class="mb-2 text-sm font-bold">紫蘇イメージ</h2>
+        <div class="aspect-[4/3] rounded bg-zinc-200"></div>
+      </article>
+      <article class="rounded border border-zinc-200 p-3">
+        <h2 class="mb-2 text-sm font-bold">生産者の顔</h2>
+        <div class="aspect-[4/3] rounded bg-zinc-200"></div>
+      </article>
+    </section>
+
+    <nav class="grid gap-2 sm:grid-cols-2">
+      <a href="fukushima-shiso-aroma.html" class="rounded border border-zinc-300 bg-zinc-50 px-3 py-2 text-sm font-bold no-underline">紫蘇の香り・制作過程・効能・用途へ</a>
+      <a href="fukushima-katsurao-reconstruction.html" class="rounded border border-zinc-300 bg-zinc-50 px-3 py-2 text-sm font-bold no-underline">復興紹介ページへ</a>
+    </nav>
+  </main>
 </body>
 </html>
