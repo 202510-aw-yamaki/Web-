@@ -1,19 +1,38 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>トップページ</title>
-  <style>
-    body {
-      font-family: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
-      margin: 2rem;
-      line-height: 1.6;
-    }
-  </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>香りの日本地図を旅する | トップページ（ワイヤーフレーム）</title>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <h1>トップページ</h1>
-  <p>フォント指定: 能登さん（Noto Sans JP） / 柊さん（Hiragino Sans）</p>
+<body class="m-0 bg-[#ece7de] font-sans leading-[1.7] text-[#1b1b1b]">
+  <main class="mx-auto my-5 w-full max-w-[980px] px-3 pb-5">
+    <section aria-label="予約導線" class="mb-4 border border-[#d2cbc0] bg-[#ddd9d2] px-4 py-7 text-center">
+      <a href="reservation.html" class="text-[clamp(24px,4vw,50px)] tracking-[0.02em] text-inherit no-underline">
+        「<strong class="font-black">今すぐ浅草で体験を予約</strong> リンク」
+      </a>
+    </section>
+
+    <section aria-label="香りの日本地図を旅する導線" class="border border-[#d2cbc0] bg-[#f6f3ee] px-5 py-[26px] max-[640px]:px-3 max-[640px]:py-[14px]">
+      <a
+        href="scent-japan-map.html"
+        aria-label="香りの日本地図を旅する。地図ポータルへ移動"
+        class="block border-2 border-dashed border-transparent text-inherit no-underline transition-colors duration-200 hover:border-[#9ab29a] focus-visible:border-[#9ab29a]"
+      >
+        <h1 class="mb-3 text-center text-[clamp(38px,8vw,64px)] font-medium leading-[1.2]">背景は日本地図</h1>
+        <div
+          role="img"
+          aria-label="日本地図の背景イメージ（ワイヤーフレーム）"
+          class="mb-4 grid min-h-[240px] place-items-center border border-[#d2cbc0] bg-[#efede8] px-4 py-4 text-center"
+        >
+          <p class="m-0 text-[clamp(18px,3.2vw,30px)]">
+            「<strong class="font-black">香りの日本地図を旅する</strong>」を押すと背景の日本地図が広がる
+          </p>
+        </div>
+      </a>
+      <p class="m-0 text-[clamp(17px,3.5vw,28px)] text-[#4e4a43]">福島県には紫蘇、石川県にはヒノキ（能登ひば）のマーク。クリックしてページ遷移。</p>
+    </section>
+  </main>
 </body>
 </html>
