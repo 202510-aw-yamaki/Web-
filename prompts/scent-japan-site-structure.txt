@@ -25,12 +25,11 @@ HTMLファイル命名案
 
 サイト構成図（命名案ベース）
 
-トップページ（index.html）
-├── 日本地図ポータルページ（scent-japan-map.html）
-│   ├── 福島県 葛尾村産の紫蘇と生産者ページ（fukushima-katsurao-shiso.html）
-│   │   ├── 福島県 紫蘇の香り・制作過程・効能・用途ページ（fukushima-shiso-aroma.html）
-│   │   └── 福島県 復興紹介ページ（fukushima-katsurao-reconstruction.html）
-│   └── 石川県 能登ひばの木材と生産者ページ（ishikawa-noto-hiba.html）
-│       ├── 石川県 能登ヒバの香り・抽出工程紹介ページ（ishikawa-noto-hiba-aroma.html）
-│       └── 石川県 復興紹介ページ（ishikawa-noto-reconstruction.html）
+トップページ＆日本地図（index.html）
+├── 福島県 葛尾村産の紫蘇と生産者モーダルページ（fukushima-katsurao-shiso.html）・・簡単な説明だけどもできれば紫蘇と生産者の顔くらいは見せたい
+│   ├── 福島県 紫蘇の香り・制作過程・効能・用途ページ（fukushima-shiso-aroma.html）
+│   └── 福島県 復興紹介ページ（fukushima-katsurao-reconstruction.html）
+├── 石川県 能登ひばの木材と生産者モーダルページ（ishikawa-noto-hiba.html）・・簡単な説明だけどもできれば森林と生産者の顔くらいは見せたい
+│   ├── 石川県 能登ヒバの香り・抽出工程紹介ページ（ishikawa-noto-hiba-aroma.html）
+│   └── 石川県 復興紹介ページ（ishikawa-noto-reconstruction.html）
 └── 浅草の実店舗紹介ページ（予約導線・今すぐ浅草で体験を予約）: reservation.html
