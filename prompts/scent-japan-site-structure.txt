@@ -33,5 +33,4 @@ HTMLファイル命名案
 │   └── 石川県 能登ひばの木材と生産者ページ（ishikawa-noto-hiba.html）
 │       ├── 石川県 能登ヒバの香り・抽出工程紹介ページ（ishikawa-noto-hiba-aroma.html）
 │       └── 石川県 復興紹介ページ（ishikawa-noto-reconstruction.html）
-├── ページB（予約導線・今すぐ浅草で体験を予約）（asakusa-booking.html）
-└── ページC（WANOWAブランド概要）
+└── 浅草の実店舗紹介ページ（予約導線・今すぐ浅草で体験を予約）: reservation.html
