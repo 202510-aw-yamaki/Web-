@@ -1,0 +1,134 @@
+
+以下サイト案の前提で新規にワイヤーフレーム用のフォルダを作り、各フォルダ及びhtmlファイルを作成してください。
+既存のファイルには触れずに作成してください。
+
+レスポンシブ対応webページ
+ブレイクポイント定義
+- モバイル: 〜767px（デフォルト）
+- タブレット: 768px〜1023px
+- PC: 1024px以上
+※下記記述にタブレットは表記していないが内部上は設定。
+タブレットの内部構造はPCの記述と同じ
+
+ヘッダーエリア
+固定ナビバー
+モバイル：左側にロゴ＋右上に提灯型のハンバーガーメニュー、押すと中からブランド名
+PC	：左側にロゴ＋右側に右詰めで提灯が並び、提灯の中にブランド名
+
+ブランド名一覧
+inimu WEBSHOP
+HA TEN KO
+AROME RECOLTE
+PERFUMERS
+WANOWA
+COCKTAIL SAVON
+Eau Paint Mais
+JOY’N
+Kou
+MUSUBI
+AISCENT
+
+提灯型のハンバーガーメニューとは
+デフォルトではしぼんだ提灯になっており、押すことで提灯が広がり側面にブランド名が並ぶ
+それぞれのブランド名クリックで各ブランドページへ
+
+mainエリア
+
+モバイル：メインヘッダーに予約案内導線+ボディに日本地図→日本の各地方→各地方のマップにアイコン→各商品のページ
+PC	：メインヘッダーに予約案内導線+ボディの中で左側に常に日本地図がありそこからクリックで、右側のページ部が切り替わる
+
+パンくず
+Home＞地方＞特産ページ
+浅草のinimu店舗の予約ページをヒーロービュー
+その下に日本地図（C:\academia\src\Web制作総合演習\wireframe\image\japanmap.png）があり、
+＜北海道＞＜東北＞＜関東＞＜中部＞＜関西＞＜四国＞＜九州＞
+をクリックできるようにする
+それぞれの地方をクリックでそれぞれの地方が拡大
+＜北海道＞C:\academia\src\Web制作総合演習\wireframe\image\hokkaido.png
+中川町の位置に【和薄荷（和ハッカ、ニホンハッカ、ワシュハッカ）】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/nakagawachowahakka）
+＜東北＞C:\academia\src\Web制作総合演習\wireframe\image\touhoku.png
+福島県双葉郡葛尾村の位置に【紫蘇】のアイコン
+クリックで詳細ページ（未作成）に遷移
+＜関東＞C:\academia\src\Web制作総合演習\wireframe\image\kantou.png
+浅草の位置に【店舗or香水っぽい】アイコン
+クリックで店舗ページ（参考：https://inimu.jp/）
+＜中部＞C:\academia\src\Web制作総合演習\wireframe\image\tyuubu.png
+岐阜県中津川市の位置に【加子母（かしも）ひのき】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/kashimohinoki）
+石川県能登半島の位置に【能登ひば】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/notohiba）
+石川能美市の位置に【国造ゆず】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/kokuzoyuzu）
+＜近畿＞C:\academia\src\Web制作総合演習\wireframe\image\kinki.png
+京都府相楽郡の位置に【和束（わづか）茶】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/wadukacha）
+奈良県吉野町明日香村の位置に【大和橘（やまとたちばな）】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/yamatotachibana）
+＜四国＞C:\academia\src\Web制作総合演習\wireframe\image\shikoku.png
+高知県土佐市の位置に【土佐文旦（とさぶんたん）】のアイコン
+クリックで詳細ページへ遷移（参考：https://www.wanowa.co/tosabuntan）
+＜九州＞C:\academia\src\Web制作総合演習\wireframe\image\kyuusyuu.png
+未定
+
+フッターエリア
+モバイル：アコーディオン
+PC	：横並び複数カラム
+著作権・法的情報の常時表示
+バージョン情報の表示
+クイックアクションボタンの配置
+ページナビゲーションの固定表示
+
+【サイト構成】
+トップページ
+├── /（Home：index.html）
+│ ├── ヘッダー（固定）
+│ │ ├── ロゴ（/）
+│ │ ├── モバイル：提灯ハンバーガー（開くとブランド直リンク）
+│ │ └── PC：提灯横並び（各ブランド既存ページへ直リンク）
+│ ├── ヒーロー：inimu予約CTA
+│ │ └── 外部：inimu既存の予約導線へ遷移 
+│ └── 日本地図（全国俯瞰）
+│ └── 地方クリック → 各地方ページへ（内部遷移）
+│ ├── /hokkaido/
+│ ├── /tohoku/
+│ ├── /kanto/
+│ ├── /chubu/
+│ ├── /kansai/
+│ ├── /shikoku/
+│ └── /kyushu/
+│
+├── /hokkaido/index.html（地方拡大地図＋アイコン）
+│ └── 中川町：和薄荷アイコン → 外部：WANOWA既存詳細へ （参考：https://www.wanowa.co/nakagawachowahakka）
+├── /tohoku/index.html
+│ └── 葛尾村：紫蘇アイコン → 外部：既存ページへ（詳細HTML未作成時の退避先）
+├── /kanto/index.html
+│ └── 浅草：店舗アイコン → 外部：inimu既存店舗ページへ （参考：https://inimu.jp/）
+├── /chubu/index.html
+│ ├── 加子母ひのき → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/kashimohinoki）
+│ ├── 能登ひば → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/notohiba）
+│ └── 国造ゆず → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/kokuzoyuzu）
+├── /kansai/index.html
+│ ├── 和束茶 → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/wadukacha）
+│ └── 大和橘 → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/yamatotachibana）
+├── /shikoku/index.html
+│ └── 土佐文旦 → 外部：WANOWA既存詳細 （参考：https://www.wanowa.co/tosabuntan）
+├── /kyushu/index.html（未定：枠だけ、のちにアイコン追加）
+│
+└── /legal/
+├── privacy.html
+├── terms.html
+└── （必要なら特商法等）
+
+※「地方ページ内の固定要素」
+・Homeページの固定ナビバーは同一のものを仕様
+・小さめの“予約する”固定CTA（外部：inimu既存予約へ。参考：https://inimu.jp/）
+パンくず（Home > 地方）＋「全国地図へ戻る」導線
+
+方針：日本地図のHome内蔵＋地方単独ページ
+
+・モバイルでの視認性向上：地方地図から各地点とすることで誤クリックを減らせる
+・Homeを軽く保てる	：地図は「地方入口」までに抑え、重いズーム/多数アイコンは地方ページ側へ逃がせる
+・CTAと体験の役割分担	：Homeは予約訴求を強く、地方ページは探索に集中（ただし予約ボタンは常時表示で逃げ道確保が可能）
+・拡張性が高い：	新しい産地が増えても「該当地方ページにアイコン追加」で完結
+・計測がしやすい：	/hokkaido など地方別に流入・クリック率が切れる（改善サイクルが回しやすい）
