@@ -65,6 +65,8 @@ Home＞地方＞特産ページ
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/wadukacha）
 奈良県吉野町明日香村の位置に【大和橘（やまとたちばな）】のアイコン
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/yamatotachibana）
+＜中国＞C:\academia\src\Web制作総合演習\wireframe\image\tyuugoku.png
+未定
 ＜四国＞C:\academia\src\Web制作総合演習\wireframe\image\shikoku.png
 高知県土佐市の位置に【土佐文旦（とさぶんたん）】のアイコン
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/tosabuntan）
