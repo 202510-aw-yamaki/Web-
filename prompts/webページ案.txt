@@ -1,0 +1,146 @@
+﻿NIPPON AROMA MAP（wireframe）現状説明資料
+作成対象: C:\academia\src\Web制作総合演習\wireframe
+
+【1. サイト全体の目的（現状）】
+- 全国地図から地方ページへ遷移し、各地方の香り素材（地点）を外部商品/ブランドページへ案内する構成です。
+- 主要なコンバージョン導線は「浅草 inimu 店舗予約（https://inimu.jp/）」です。
+
+【2. ホームページ構成（wireframe/index.html）】
+1. ヘッダー
+- ロゴ: NIPPON AROMA MAP（自ページリンク）
+- PC用ブランドナビ（外部リンク）
+  - inimu WEBSHOP
+  - HA TEN KO
+  - AROME RECOLTE
+  - PERFUMERS
+  - WANOWA
+  - COCKTAIL SAVON
+  - Eau Paint Mais
+  - JOY'N
+  - Kou
+  - MUSUBI
+  - AISCENT
+- モバイル用メニュー（提灯ボタン）
+  - 上記と同じブランドリンクを開閉表示
+  - assets/script.js で `is-open` クラスをトグル
+
+2. メインビジュアル（Hero）
+- 見出し: 「浅草 inimu 店舗予約」
+- 補助テキスト: 「ＫＯＵＳＡＫＵ」
+- CTA: 「予約ページへ」→ https://inimu.jp/
+
+3. 日本地図セクション
+- パンくず: Home
+- 日本地図画像: image/japanmap.png
+- 地方ホットスポット（内部リンク）
+  - 北海道 → hokkaido/index.html
+  - 東北 → tohoku/index.html
+  - 関東 → kanto/index.html
+  - 中部 → chubu/index.html
+  - 近畿 → kinki/index.html
+  - 中国 → chugoku/index.html
+  - 四国 → shikoku/index.html
+  - 九州 → kyushu/index.html
+- 説明文: 「地図上の各地方をクリックすると各地方ページへ遷移します。」
+
+4. フッター
+- モバイル（details開閉）
+  - 会社情報（テキスト）
+  - 法的情報（Privacy/Terms）
+  - サポート（テキスト）
+- PC
+  - 会社情報（テキスト）
+  - 法的情報（プライバシーポリシー / 利用規約）
+  - サポート（テキスト）
+  - クイックリンク（全国地図 / 予約ページ）
+- コピーライト表記
+
+5. 画面固定導線
+- 固定CTA: 「予約する」→ https://inimu.jp/
+- 固定ナビ
+  - 全国マップ
+  - 予約導線
+  - Privacy
+  - Terms
+
+【3. 地方ページ構成（共通テンプレート）】
+対象:
+- hokkaido/index.html
+- tohoku/index.html
+- kanto/index.html
+- chubu/index.html
+- kinki/index.html
+- shikoku/index.html
+- kyushu/index.html
+
+共通要素:
+- ヘッダー（ロゴ、PCブランドナビ、モバイルブランドメニュー）
+- パンくず（Home > 地方名）
+- 地方名画像セクション（地域画像1枚）
+- 地点アイコンセクション（poi-list: 外部リンク）
+- フッター（法的情報/クイックリンク含む）
+- 固定CTA「予約する」
+- 固定ナビ（全国マップ/予約導線/Privacy/Terms）
+
+地方別の地点リンク（poi-list）:
+- 北海道
+  - 中川町: 和薄荷（和ハッカ）
+  - https://www.wanowa.co/nakagawachowahakka
+- 東北
+  - 葛尾村: 紫蘇（詳細ページ未作成の退避先）
+  - https://www.wanowa.co/
+- 関東
+  - 浅草: inimu 店舗ページ
+  - https://inimu.jp/
+- 中部
+  - 岐阜県中津川市: 加子母ひのき
+    - https://www.wanowa.co/kashimohinoki
+  - 石川県能登半島: 能登ひば
+    - https://www.wanowa.co/notohiba
+  - 石川県能美市: 国造ゆず
+    - https://www.wanowa.co/kokuzoyuzu
+- 近畿（ページタイトルは「関西」）
+  - 京都府相楽郡: 和束茶
+    - https://www.wanowa.co/wadukacha
+  - 奈良県吉野町明日香村: 大和橘
+    - https://www.wanowa.co/yamatotachibana
+- 四国
+  - 高知県土佐市: 土佐文旦
+  - https://www.wanowa.co/tosabuntan
+- 九州
+  - 未定（後日追加）
+  - リンク先は `#`（aria-disabled="true"）
+
+【4. 法的ページ】
+- legal/privacy.html
+  - パンくず: Home > Legal > Privacy
+  - 見出し: プライバシーポリシー（ワイヤーフレーム）
+- legal/terms.html
+  - パンくず: Home > Legal > Terms
+  - 見出し: 利用規約（ワイヤーフレーム）
+
+【5. 現状サイトマップ（内部ページ）】
+- /wireframe/index.html（ホーム）
+  - /wireframe/hokkaido/index.html
+  - /wireframe/tohoku/index.html
+  - /wireframe/kanto/index.html
+  - /wireframe/chubu/index.html
+  - /wireframe/kinki/index.html
+  - /wireframe/chugoku/index.html（リンクあり・実ファイルなし）
+  - /wireframe/shikoku/index.html
+  - /wireframe/kyushu/index.html
+  - /wireframe/legal/privacy.html
+  - /wireframe/legal/terms.html
+
+地方ページ（7ページ）からの主要内部導線:
+- 各ページ → /wireframe/index.html（全国地図へ戻る）
+- 各ページ → /wireframe/legal/privacy.html
+- 各ページ → /wireframe/legal/terms.html
+
+【6. 現状の注意点（クライアント説明時に明示推奨）】
+- ホームからの「中国」リンク先 `chugoku/index.html` は現時点で未作成です（404想定）。
+- 九州ページの地点リンクは「未定」で、実遷移先は未設定です。
+- 東北ページの地点リンクは仮退避先として WANOWA トップを参照しています。
+- 多数のブランド名リンク（HA TEN KO など）は同一ドメイン（wanowa.co）に集約されている暫定実装です。
+
+以上が、現在の wireframe 構成とサイトマップの全体像です。
