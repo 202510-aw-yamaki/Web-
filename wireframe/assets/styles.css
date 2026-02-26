@@ -262,6 +262,16 @@ a {
   left: 52%;
 }
 
+.map-poi-btn-chubu-gifu {
+  top: 71%;
+  left: 45%;
+}
+
+.map-poi-btn-chubu-noto {
+  top: 25%;
+  left: 41%;
+}
+
 .map-poi-btn img {
   display: block;
   width: 100%;

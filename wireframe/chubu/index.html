@@ -46,6 +46,12 @@
       <section class="map-shell">
         <div class="japan-map-area" aria-label="中部 地図">
           <img src="../image/chubu/tyuubu.png" alt="中部地図" class="japan-map-image">
+          <button class="map-poi-btn map-poi-btn-chubu-gifu" type="button" data-open-modal="gifuHinokiModal" aria-label="岐阜ひのきの詳細を開く">
+            <img src="../image/chubu/岐阜ひのき.png" alt="岐阜ひのき">
+          </button>
+          <button class="map-poi-btn map-poi-btn-chubu-noto" type="button" data-open-modal="notoHibaModal" aria-label="能登ひばの詳細を開く">
+            <img src="../image/chubu/能登ひば.png" alt="能登ひば">
+          </button>
         </div>
         <p class="map-note">中部の地図</p>
       </section>
@@ -78,6 +84,20 @@
       </div>
     </div>
   </nav>
+  <dialog id="gifuHinokiModal" class="poi-modal" aria-label="岐阜ひのきの詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/chubu/岐阜ひのき.png" alt="岐阜ひのき">
+      <figcaption>中部 岐阜ひのき</figcaption>
+    </figure>
+  </dialog>
+  <dialog id="notoHibaModal" class="poi-modal" aria-label="能登ひばの詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/chubu/能登ひば.png" alt="能登ひば">
+      <figcaption>中部 能登ひば</figcaption>
+    </figure>
+  </dialog>
   <script src="../assets/script.js"></script>
 </body>
 
