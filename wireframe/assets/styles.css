@@ -128,9 +128,21 @@ a {
   margin-bottom: 16px;
 }
 
+.hero-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
 .hero h1 {
-  margin: 0 0 8px;
+  margin: 0;
   font-size: clamp(20px, 4vw, 32px);
+}
+
+.hero-kousaku {
+  margin: 8px 0 0;
 }
 
 .cta-btn {
@@ -140,6 +152,10 @@ a {
   color: #fff;
   padding: 10px 16px;
   margin-top: 8px;
+}
+
+.hero-top .cta-btn {
+  margin-top: 0;
 }
 
 .breadcrumb {
@@ -153,6 +169,10 @@ a {
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 16px;
+  height: 65vh;
+  max-height: 65vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .japan-map-area {
@@ -163,7 +183,7 @@ a {
   overflow: hidden;
   background: #fff;
   width: 100%;
-  max-width: 640px;
+  max-width: 100%;
   aspect-ratio: 816 / 768;
 }
 
@@ -171,7 +191,7 @@ a {
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: fill;
 }
 
 .map-hotspot {
