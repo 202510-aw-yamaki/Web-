@@ -46,6 +46,12 @@
       <section class="map-shell">
         <div class="japan-map-area" aria-label="近畿 地図">
           <img src="../image/kinki/kinki.png" alt="近畿地図" class="japan-map-image">
+          <button class="map-poi-btn map-poi-btn-kinki-yamatotachibana" type="button" data-open-modal="yamatotachibanaModal" aria-label="大和橘の詳細を開く">
+            <img src="../image/kinki/大和橘.png" alt="大和橘">
+          </button>
+          <button class="map-poi-btn map-poi-btn-kinki-wadukacha" type="button" data-open-modal="wadukachaModal" aria-label="和束茶の詳細を開く">
+            <img src="../image/kinki/和束茶.png" alt="和束茶">
+          </button>
         </div>
         <p class="map-note">近畿の地図</p>
       </section>
@@ -78,6 +84,20 @@
       </div>
     </div>
   </nav>
+  <dialog id="yamatotachibanaModal" class="poi-modal" aria-label="大和橘の詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/kinki/大和橘.png" alt="大和橘">
+      <figcaption>近畿 大和橘</figcaption>
+    </figure>
+  </dialog>
+  <dialog id="wadukachaModal" class="poi-modal" aria-label="和束茶の詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/kinki/和束茶.png" alt="和束茶">
+      <figcaption>近畿 和束茶</figcaption>
+    </figure>
+  </dialog>
   <script src="../assets/script.js"></script>
 </body>
 

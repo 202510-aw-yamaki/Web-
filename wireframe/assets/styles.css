@@ -277,10 +277,25 @@ a {
   left: 30%;
 }
 
+.map-poi-btn-kinki-yamatotachibana {
+  top: 60%;
+  left: 58%;
+}
+
+.map-poi-btn-kinki-wadukacha {
+  top: 35%;
+  left: 60%;
+}
+
 .map-poi-btn img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.map-poi-btn-shikoku-tosabuntan {
+  top: 56%;
+  left: 42%;
 }
 
 .poi-modal {
