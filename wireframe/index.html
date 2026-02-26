@@ -8,28 +8,22 @@
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 
-<body>
+<body class="home-page">
+<!-- 外部リンク予定、現在はトップページ遷移 -->
   <header class="site-header">
     <div class="container nav-row">
       <a class="logo" href="./index.html">NIPPON AROMA MAP</a>
       <button id="menuToggle" class="mobile-lantern" aria-expanded="false" aria-controls="mobileMenu">提灯</button>
-      <nav class="pc-lanterns" aria-label="ブランド">
-        <a href="https://inimu.jp/" target="_blank" rel="noopener">inimu WEBSHOP</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">HA TEN KO</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">AROME RECOLTE</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">PERFUMERS</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">WANOWA</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">COCKTAIL SAVON</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">Eau Paint Mais</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">JOY'N</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">Kou</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">MUSUBI</a>
-        <a href="https://www.wanowa.co/" target="_blank" rel="noopener">AISCENT</a>
+                        <nav class="pc-lanterns" aria-label="ブランド">
+        <a href="./index.html">ブランドA</a>
+        <a href="./index.html">ブランドＢ</a>
+        <a href="./index.html">ブランドＣ</a>
+        <a href="./index.html">ブランドＤ</a>
+        <a href="./index.html">ブランドＥ</a>
       </nav>
     </div>
     <nav id="mobileMenu" class="mobile-menu" aria-label="ブランドメニュー">
-      <ul class="brand-list">
-        <!-- リンク先は現在すべてトップページです -->
+                        <ul class="brand-list">
         <li><a href="./index.html">ブランドA</a></li>
         <li><a href="./index.html">ブランドＢ</a></li>
         <li><a href="./index.html">ブランドＣ</a></li>
@@ -42,11 +36,11 @@
     <main class="container">
       <article class="hero">
         <div class="hero-top">
-          <h1>浅草 inimu 店舗予約</h1>
-          <a class="cta-btn" href="https://inimu.jp/" target="_blank" rel="noopener">予約ページへ</a>
+          <h1>浅草 rohera 店舗予約</h1>
+          <a class="cta-btn" href="./index.html" target="_blank" rel="noopener">予約ページへ</a>
         </div>
         <p class="hero-kousaku">ＫＯＵＳＡＫＵ</p>
-        <a class="cta-btn fixed-reserve" href="https://inimu.jp/" target="_blank" rel="noopener">予約する</a>
+        <a class="cta-btn fixed-reserve" href="./index.html" target="_blank" rel="noopener">予約する</a>
       </article>
 
       <section class="map-shell">
@@ -64,44 +58,44 @@
         </div>
         <p>地図上の各地方をクリックすると各地方ページへ遷移します。</p>
       </section>
-
-
-      <footer class="site-footer">
-        <div class="footer-mobile">
-          <details>
-            <summary>会社情報</summary>
-            <div class="inner">ブランド概要 / お問い合わせ</div>
-          </details>
-          <details>
-            <summary>法的情報</summary>
-            <div class="inner"><a href="legal/privacy.html">プライバシーポリシー</a> / <a href="legal/terms.html">利用規約</a></div>
-          </details>
-          <details>
-            <summary>サポート</summary>
-            <div class="inner">FAQ / 配送・返品</div>
-          </details>
-        </div>
-        <div class="footer-pc">
-          <div>会社情報<br>ブランド概要<br>お問い合わせ</div>
-          <div>法的情報<br><a href="legal/privacy.html">プライバシーポリシー</a><br><a href="legal/terms.html">利用規約</a></div>
-          <div>サポート<br>FAQ<br>配送・返品</div>
-          <div>クイックリンク<br><a href="./index.html">全国地図</a><br><a href="https://inimu.jp/" target="_blank"
-              rel="noopener">予約ページ</a></div>
-        </div>
-        <p class="meta">© 2026 inimu / WANOWA | 法的情報常時表示 | Version: wireframe v0.1.0</p>
-      </footer>
     </main>
   </div>
   <nav class="fixed-nav" aria-label="固定ナビ">
-    <div class="container">
-      <a href="./index.html">全国マップ</a>
-      <a href="https://inimu.jp/" target="_blank" rel="noopener">予約導線</a>
-      <a href="legal/privacy.html">Privacy</a>
-      <a href="legal/terms.html">Terms</a>
+    <div class="container fixed-nav-content">
+      <div class="fixed-nav-accordions">
+        <details class="fixed-nav-accordion">
+          <summary>Information</summary>
+          <div class="inner">
+            <a href="./index.html">ブランド概要</a>
+            <a href="./index.html">お問い合わせ</a>
+          </div>
+        </details>
+        <details class="fixed-nav-accordion">
+          <summary>Legal</summary>
+          <div class="inner">
+            <a href="legal/privacy.html">プライバシーポリシー</a>
+            <a href="legal/terms.html">利用規約</a>
+          </div>
+        </details>
+        <details class="fixed-nav-accordion">
+          <summary>Support</summary>
+          <div class="inner">
+            <a href="./index.html">FAQ</a>
+            <a href="./index.html">配送・返品</a>
+          </div>
+        </details>
+        <a class="fixed-nav-link" href="legal/privacy.html">Privacy</a>
+        <a class="fixed-nav-link" href="legal/terms.html">Terms</a>
+      </div>
     </div>
   </nav>
   <script src="assets/script.js"></script>
 </body>
 
 </html>
-<<<<<<< HEAD=======>>>>>>> origin/main
+
+
+
+
+
+
