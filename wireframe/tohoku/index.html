@@ -46,6 +46,9 @@
       <section class="map-shell">
         <div class="japan-map-area" aria-label="東北 地図">
           <img src="../image/tohoku/touhoku.png" alt="東北地図" class="japan-map-image">
+          <button class="map-poi-btn map-poi-btn-tohoku" type="button" data-open-modal="shissoModal" aria-label="しっそー君の詳細を開く">
+            <img src="../image/tohoku/しっそー君.png" alt="しっそー君">
+          </button>
         </div>
         <p class="map-note">東北の地図</p>
       </section>
@@ -78,6 +81,13 @@
       </div>
     </div>
   </nav>
+  <dialog id="shissoModal" class="poi-modal" aria-label="しっそー君の詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/tohoku/しっそー君.png" alt="しっそー君">
+      <figcaption>東北 しっそー君</figcaption>
+    </figure>
+  </dialog>
   <script src="../assets/script.js"></script>
 </body>
 

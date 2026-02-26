@@ -252,6 +252,11 @@ a {
   cursor: pointer;
 }
 
+.map-poi-btn-tohoku {
+  top: 83%;
+  left: 53%;
+}
+
 .map-poi-btn img {
   display: block;
   width: 100%;
