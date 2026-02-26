@@ -16,17 +16,7 @@
 PC	：左側にロゴ＋右側に右詰めで提灯が並び、提灯の中にブランド名
 
 ブランド名一覧
-inimu WEBSHOP
-HA TEN KO
-AROME RECOLTE
-PERFUMERS
-WANOWA
-COCKTAIL SAVON
-Eau Paint Mais
-JOY’N
-Kou
-MUSUBI
-AISCENT
+ブランドA、Ｂ，Ｃ，Ｄ，Ｅ
 
 提灯型のハンバーガーメニューとは
 デフォルトではしぼんだ提灯になっており、押すことで提灯が広がり側面にブランド名が並ぶ
