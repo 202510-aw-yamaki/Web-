@@ -46,6 +46,9 @@
       <section class="map-shell">
         <div class="japan-map-area" aria-label="関東 地図">
           <img src="../image/kanto/kantou.png" alt="関東地図" class="japan-map-image">
+          <button class="map-poi-btn map-poi-btn-kanto" type="button" data-open-modal="asakusaModal" aria-label="浅草お兄さんの詳細を開く">
+            <img src="../image/kanto/浅草お兄さん.png" alt="浅草お兄さん">
+          </button>
         </div>
         <p class="map-note">関東の地図</p>
       </section>
@@ -78,6 +81,13 @@
       </div>
     </div>
   </nav>
+  <dialog id="asakusaModal" class="poi-modal" aria-label="浅草お兄さんの詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/kanto/浅草お兄さん.png" alt="浅草お兄さん">
+      <figcaption>関東 浅草お兄さん</figcaption>
+    </figure>
+  </dialog>
   <script src="../assets/script.js"></script>
 </body>
 
