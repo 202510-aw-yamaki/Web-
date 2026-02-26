@@ -175,6 +175,10 @@ a {
   margin: 8px 0 16px;
 }
 
+.map-note {
+  text-align: center;
+}
+
 .map-shell {
   background: var(--paper);
   border: 1px solid var(--line);
