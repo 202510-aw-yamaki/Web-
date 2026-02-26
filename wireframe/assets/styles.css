@@ -240,6 +240,53 @@ a {
   border: 1px solid #fff;
 }
 
+.map-poi-btn {
+  position: absolute;
+  top: 37%;
+  left: 34%;
+  width: 12%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
+  cursor: pointer;
+}
+
+.map-poi-btn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.poi-modal {
+  width: 90vw;
+  max-width: 90vw;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 14px;
+}
+
+.poi-modal::backdrop {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.poi-modal-close {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #fff;
+  padding: 6px 10px;
+}
+
+.poi-modal-content {
+  margin: 10px 0 0;
+}
+
+.poi-modal-content img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
 .spot-hokkaido {
   top: 15%;
   left: 73%;

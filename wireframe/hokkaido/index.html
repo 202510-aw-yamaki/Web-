@@ -46,6 +46,9 @@
       <section class="map-shell">
         <div class="japan-map-area" aria-label="北海道 地図">
           <img src="../image/hokkaido/hokkaido.png" alt="北海道地図" class="japan-map-image">
+          <button class="map-poi-btn" type="button" data-open-modal="wakkaModal" aria-label="和薄荷の詳細を開く">
+            <img src="../image/hokkaido/北海道和薄荷.png" alt="和薄荷">
+          </button>
         </div>
         <p class="map-note">北海道の地図</p>
       </section>
@@ -78,6 +81,13 @@
       </div>
     </div>
   </nav>
+  <dialog id="wakkaModal" class="poi-modal" aria-label="和薄荷の詳細">
+    <button class="poi-modal-close" type="button" data-close-modal aria-label="閉じる">閉じる</button>
+    <figure class="poi-modal-content">
+      <img src="../image/hokkaido/北海道和薄荷.png" alt="北海道 和薄荷">
+      <figcaption>北海道 和薄荷（わはっか）</figcaption>
+    </figure>
+  </dialog>
   <script src="../assets/script.js"></script>
 </body>
 

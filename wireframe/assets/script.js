@@ -24,3 +24,33 @@
     el.addEventListener('toggle', syncFixedNavHeight);
   });
 })();
+
+(() => {
+  const openers = document.querySelectorAll('[data-open-modal]');
+  if (!openers.length) return;
+
+  openers.forEach((opener) => {
+    opener.addEventListener('click', () => {
+      const id = opener.getAttribute('data-open-modal');
+      const modal = document.getElementById(id);
+      if (modal && typeof modal.showModal === 'function') {
+        modal.showModal();
+      }
+    });
+  });
+
+  document.querySelectorAll('dialog.poi-modal').forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.close();
+      }
+    });
+  });
+
+  document.querySelectorAll('[data-close-modal]').forEach((closer) => {
+    closer.addEventListener('click', () => {
+      const modal = closer.closest('dialog');
+      if (modal) modal.close();
+    });
+  });
+})();
