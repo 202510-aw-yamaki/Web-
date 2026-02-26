@@ -133,7 +133,15 @@ a {
   align-items: center;
   justify-content: space-between;
   gap: 12px;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+
+.hero-top h1 {
+  flex: 1 1 72%;
+  min-width: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .hero h1 {
@@ -155,6 +163,9 @@ a {
 }
 
 .hero-top .cta-btn {
+  flex: 0 0 28%;
+  text-align: center;
+  white-space: nowrap;
   margin-top: 0;
 }
 
@@ -329,7 +340,7 @@ a {
 .home-page .fixed-nav-accordions {
   display: flex;
   gap: 10px;
-  overflow-x: auto;
+  overflow: visible;
   align-items: stretch;
 }
 
@@ -340,6 +351,7 @@ a {
   border-radius: 8px;
   background: #fffaf0;
   position: relative;
+  z-index: 1;
 }
 
 .home-page .fixed-nav-accordion summary {
