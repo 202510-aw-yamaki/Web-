@@ -65,11 +65,8 @@ Home＞地方＞特産ページ
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/wadukacha）
 奈良県吉野町明日香村の位置に【大和橘（やまとたちばな）】のアイコン
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/yamatotachibana）
-<<<<<<< HEAD
 ＜中国＞C:\academia\src\Web制作総合演習\wireframe\image\chugoku.png
 未定
-=======
->>>>>>> origin/main
 ＜四国＞C:\academia\src\Web制作総合演習\wireframe\image\shikoku.png
 高知県土佐市の位置に【土佐文旦（とさぶんたん）】のアイコン
 クリックで詳細ページへ遷移（参考：https://www.wanowa.co/tosabuntan）
@@ -137,3 +134,90 @@ PC	：横並び複数カラム
 ・CTAと体験の役割分担	：Homeは予約訴求を強く、地方ページは探索に集中（ただし予約ボタンは常時表示で逃げ道確保が可能）
 ・拡張性が高い：	新しい産地が増えても「該当地方ページにアイコン追加」で完結
 ・計測がしやすい：	/hokkaido など地方別に流入・クリック率が切れる（改善サイクルが回しやすい）
+
+
+
+Webアプリケーション構造図
+springboot前提
+
+管理システム（Spring Boot）
+
+├─ ログイン前
+│  ├─ /login（ログイン画面）
+│  │  ├─ ID/メール入力
+│  │  ├─ パスワード入力
+│  │  └─ ログイン実行
+│  └─ /logout-complete（ログアウト後画面）※任意
+│
+└─ ログイン後
+   ├─ /admin（管理トップ）
+   │
+   ├─ 地点管理（各地方）
+   │  ├─ /admin/locations（一覧・検索）
+   │  ├─ /admin/locations/new（追加）
+   │  ├─ /admin/locations/{id}/edit（編集）
+   │  └─ /admin/locations/{id}/delete（削除）
+   │
+   ├─ 画像管理
+   │  ├─ /admin/images（一覧）
+   │  ├─ /admin/images/upload（追加）
+   │  └─ /admin/images/{id}/delete（削除）
+   │
+   ├─ 公開設定
+   │  ├─ /admin/publish（公開/非公開）
+   │  └─ /admin/publish/order（表示順）
+   │
+   ├─ 監査ログ
+   │  └─ /admin/audit-logs（操作履歴一覧・検索）
+   │
+   └─ 共通機能（全管理画面）
+      ├─ ヘッダー（ユーザー情報、ログアウト、主要メニュー）
+      ├─ ページネーション（一覧画面）
+      ├─ バリデーション（入力チェック・エラー表示）
+      └─ 権限（Admin/Editor などのアクセス制御）
+
+[ログイン前]
+開始
+  ↓
+ログイン画面(/login)
+  ├─ 認証成功 → 管理トップ(/admin)
+  └─ 認証失敗 → ログイン画面(/login)［エラー表示］
+
+
+[ログイン後]
+管理トップ(/admin)
+  ├→ 地点管理 一覧・検索(/admin/locations)
+  │    ├→ 追加(/admin/locations/new) → 保存 → 一覧(/admin/locations)
+  │    ├→ 編集(/admin/locations/{id}/edit) → 保存 → 一覧(/admin/locations)
+  │    └→ 削除(/admin/locations/{id}/delete) → 実行 → 一覧(/admin/locations)
+  │
+  ├→ 画像管理 一覧(/admin/images)
+  │    ├→ 追加(/admin/images/upload) → 保存 → 一覧(/admin/images)
+  │    └→ 削除(/admin/images/{id}/delete) → 実行 → 一覧(/admin/images)
+  │
+  ├→ 公開設定(/admin/publish)
+  │    ├→ 公開/非公開 切替 → 公開設定(/admin/publish)
+  │    └→ 表示順設定(/admin/publish/order) → 保存 → 公開設定(/admin/publish)
+  │
+  ├→ 監査ログ(/admin/audit-logs)
+  │    └→ 検索/絞り込み → 監査ログ(/admin/audit-logs)
+  │
+  └→ ログアウト(/logout) → ログイン画面(/login)
+
+
+[共通機能の適用範囲]
+ヘッダー（全管理画面）
+ページネーション（/admin/locations, /admin/images, /admin/audit-logs）
+バリデーション（追加/編集/公開設定の保存時）
+権限制御（未認証: /loginへ、権限不足: 403）
+
+＜管理画面は後続タスク＞
+
+最低限あると良い管理画面:
+login.html
+dashboard.html
+list.html
+form.html（追加・編集兼用）
+list.html
+index.html
+list.html
