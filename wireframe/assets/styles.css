@@ -515,6 +515,48 @@ a {
   padding-bottom: calc(var(--fixed-nav-content-h, 0px) + 24px);
 }
 
+/* Top page only: fit hero + map shell inside viewport minus breadcrumb/header/fixed footer */
+body.home-page:not(.region-page) {
+  height: 100dvh;
+  overflow: hidden;
+}
+
+body.home-page:not(.region-page) .page-wrap {
+  height: 100dvh;
+  padding-top: calc(var(--header-h) + var(--breadcrumb-h));
+  padding-bottom: var(--fixed-nav-content-h, 0px);
+}
+
+body.home-page:not(.region-page) .page-wrap > main.container {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+body.home-page:not(.region-page) .hero {
+  flex: 0 0 auto;
+}
+
+body.home-page:not(.region-page) .map-shell {
+  flex: 1 1 auto;
+  min-height: 0;
+  height: auto;
+  max-height: none;
+}
+
+body.home-page:not(.region-page) .japan-map-area {
+  flex: 1 1 auto;
+  min-height: 0;
+  margin: 0 auto;
+}
+
+body.home-page:not(.region-page) .map-note {
+  margin: 8px 0 0;
+  flex: 0 0 auto;
+}
+
 .site-footer {
   margin-top: 24px;
   border-top: 1px solid var(--line);
