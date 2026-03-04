@@ -744,3 +744,14 @@ body.home-page .map-note {
     max-width: 760px;
   }
 }
+
+
+
+
+
+
+.map-poi-btn-tohoku img {
+  opacity: 1;
+  mix-blend-mode: darken;
+}
+
