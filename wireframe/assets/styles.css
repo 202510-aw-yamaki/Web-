@@ -232,12 +232,35 @@ a {
 .map-hotspot {
   position: absolute;
   transform: translate(-50%, -50%);
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 999px;
+  border: 1px solid #fff;
   background: rgba(194, 60, 42, 0.9);
   color: #fff;
-  border-radius: 999px;
-  padding: 4px 8px;
-  font-size: 12px;
-  border: 1px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.map-hotspot-icon {
+  display: none;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.map-hotspot-count {
+  display: inline-grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.map-hotspot.is-empty {
+  display: none;
 }
 
 .map-poi-btn {
@@ -392,41 +415,49 @@ a {
   border-radius: 10px;
 }
 
+/* 北海道ホットスポットの位置設定 */
 .spot-hokkaido {
   top: 15%;
   left: 73%;
 }
 
+/* 東北ホットスポットの位置設定 */
 .spot-tohoku {
   top: 45%;
   left: 63%;
 }
 
+/* 関東ホットスポットの位置設定 */
 .spot-kanto {
   top: 65%;
   left: 58%;
 }
 
+/* 中部ホットスポットの位置設定 */
 .spot-chubu {
   top: 63%;
   left: 46%;
 }
 
+/* 近畿ホットスポットの位置設定 */
 .spot-kinki {
   top: 71%;
   left: 37%;
 }
 
+/* 中国ホットスポットの位置設定 */
 .spot-chugoku {
   top: 70%;
   left: 22%;
 }
 
+/* 四国ホットスポットの位置設定 */
 .spot-shikoku {
   top: 78%;
   left: 25%;
 }
 
+/* 九州ホットスポットの位置設定 */
 .spot-kyushu {
   top: 84%;
   left: 12%;
@@ -668,6 +699,21 @@ body.home-page .map-note {
 }
 
 @media (min-width: 1024px) {
+  .map-hotspot {
+    width: 72px;
+    height: 72px;
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .map-hotspot-icon {
+    display: block;
+  }
+
+  .map-hotspot-count {
+    display: none;
+  }
 
   .mobile-lantern,
   .mobile-menu,
