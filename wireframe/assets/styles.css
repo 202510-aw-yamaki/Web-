@@ -263,18 +263,18 @@ a {
 }
 
 .map-poi-btn-chubu-gifu {
-  top: 71%;
-  left: 45%;
+  top: 63%;
+  left: 43%;
 }
 
 .map-poi-btn-chubu-noto {
-  top: 25%;
+  top: 31%;
   left: 41%;
 }
 
 .map-poi-btn-chubu-yuzu {
   top: 44%;
-  left: 30%;
+  left: 26%;
 }
 
 .map-poi-btn-kinki-yamatotachibana {
@@ -408,8 +408,8 @@ a {
 }
 
 .spot-chubu {
-  top: 66%;
-  left: 48%;
+  top: 63%;
+  left: 46%;
 }
 
 .spot-kinki {
@@ -592,7 +592,7 @@ body.home-page .page-wrap {
   padding-bottom: var(--fixed-nav-content-h, 0px);
 }
 
-body.home-page .page-wrap > main.container {
+body.home-page .page-wrap>main.container {
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -754,4 +754,3 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
-
