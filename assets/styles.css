@@ -424,23 +424,6 @@ a {
   border-radius: 10px;
 }
 
-.poi-image-placeholder {
-  width: 100%;
-  min-height: 220px;
-  border: 1px dashed #b9ae98;
-  border-radius: 10px;
-  background: #fffaf0;
-  color: #6b604d;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 16px;
-}
-
-.modal-cta-inline {
-  margin-top: 12px;
-}
-
 /* 北海道ホットスポットの位置設定 */
 .spot-hokkaido {
   top: 15%;
@@ -826,3 +809,4 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
+
