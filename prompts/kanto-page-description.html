@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>関東ページ説明（外部化用）</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      line-height: 1.8;
+      color: #1d1d1f;
+      background: #f7f4ee;
+    }
+    .wrap {
+      width: min(960px, 92vw);
+      margin: 24px auto 48px;
+      background: #fff;
+      border: 1px solid #d8d0c0;
+      border-radius: 12px;
+      padding: 20px;
+    }
+    h1, h2 {
+      line-height: 1.4;
+      margin: 0 0 10px;
+    }
+    h1 {
+      font-size: 28px;
+      margin-bottom: 16px;
+    }
+    h2 {
+      font-size: 20px;
+      margin-top: 22px;
+    }
+    p {
+      margin: 0 0 10px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 1.2em;
+    }
+    .img-box {
+      margin: 14px 0 8px;
+      border: 1px solid #d8d0c0;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 320px;
+    }
+    .img-box img {
+      display: block;
+      width: 100%;
+      height: auto;
+      background: #fff;
+    }
+    .meta {
+      margin-top: 20px;
+      font-size: 13px;
+      color: #666;
+      border-top: 1px solid #e5dece;
+      padding-top: 10px;
+    }
+    code {
+      background: #f2efe8;
+      padding: 1px 4px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>関東ページ説明（外部化用HTML）</h1>
+
+    <p>このファイルは、<code>kanto/index.html</code> の現状説明を外部化して管理するための単体HTMLです。</p>
+
+    <h2>ページの現在構成</h2>
+    <ul>
+      <li>上部にパンくず（Home &gt; 関東）</li>
+      <li>共通ヘッダー（ロゴ、提灯ボタン、ブランドメニュー）</li>
+      <li>ヒーロー領域（「関東 rohera」「ＫＯＵＳＡＫＵ」「予約ページへ」）</li>
+      <li>関東地図画像＋POIボタン（浅草お兄さん）</li>
+      <li>固定ナビ（Info / Legal / Support）</li>
+      <li>POIモーダル（浅草お兄さん画像＋キャプション）</li>
+    </ul>
+
+    <h2>POI（浅草）について</h2>
+    <p>関東ページのPOIは1点で、浅草のアイコンを押すとモーダルが開く構成です。</p>
+    <p>現在の画像参照先は以下です。</p>
+    <ul>
+      <li><code>../image/kanto/asakusashop/浅草お兄さん.png</code></li>
+    </ul>
+    <figure class="img-box">
+      <img src="../image/kanto/asakusashop/浅草お兄さん.png" alt="浅草お兄さん">
+    </figure>
+
+    <h2>今後の拡張ポイント</h2>
+    <p>モーダル内は現時点で最小構成のため、以下を追加しやすい状態です。</p>
+    <ul>
+      <li>浅草ワークショップ店内画像（複数枚）</li>
+      <li>体験内容、香りの特徴、予約導線の説明文</li>
+      <li>営業時間・アクセスなどの外部情報リンク</li>
+    </ul>
+
+    <p class="meta">配置先: <code>prompts/kanto-page-description.html</code></p>
+  </main>
+</body>
+</html>
