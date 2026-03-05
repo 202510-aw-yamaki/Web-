@@ -264,6 +264,7 @@ a {
 }
 
 .map-poi-btn {
+  /* POI位置調整（デフォルト）: 北海道ページ 和薄荷 */
   position: absolute;
   top: 37%;
   left: 34%;
@@ -275,36 +276,43 @@ a {
   cursor: pointer;
 }
 
+/* POI位置調整: 東北ページ 凍餅しっそーくん */
 .map-poi-btn-tohoku {
   top: 83%;
   left: 53%;
 }
 
+/* POI位置調整: 関東ページ 浅草お兄さん */
 .map-poi-btn-kanto {
   top: 61%;
   left: 52%;
 }
 
+/* POI位置調整: 中部ページ 加子母ひのき */
 .map-poi-btn-chubu-gifu {
-  top: 63%;
+  top: 69%;
   left: 43%;
 }
 
+/* POI位置調整: 中部ページ 能登ひば */
 .map-poi-btn-chubu-noto {
-  top: 31%;
+  top: 25%;
   left: 41%;
 }
 
+/* POI位置調整: 中部ページ 国造ゆず */
 .map-poi-btn-chubu-yuzu {
   top: 44%;
   left: 26%;
 }
 
+/* POI位置調整: 近畿ページ 大和橘 */
 .map-poi-btn-kinki-yamatotachibana {
   top: 60%;
   left: 58%;
 }
 
+/* POI位置調整: 近畿ページ 和束茶 */
 .map-poi-btn-kinki-wadukacha {
   top: 35%;
   left: 60%;
@@ -317,6 +325,7 @@ a {
 }
 
 .map-poi-btn-shikoku-tosabuntan {
+  /* POI位置調整: 四国ページ 土佐文旦 */
   top: 62%;
   left: 42%;
 }
