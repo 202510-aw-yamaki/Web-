@@ -20,6 +20,10 @@ body {
   background: linear-gradient(180deg, #fbf8f2 0%, #f2efe8 100%);
 }
 
+body.home-page:not(.region-page) {
+  background: #e4e1da url("../image/香りの探求の背景.png") center top / cover no-repeat fixed;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -181,6 +185,7 @@ a {
   justify-content: center;
   gap: 2em;
   margin: 0;
+  font-family: "秀英明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;
   font-size: clamp(42px, 10vw, 108px);
   font-weight: 700;
   letter-spacing: 0.12em;
@@ -202,6 +207,10 @@ a {
 }
 
 .hero-copy {
+  display: none;
+}
+
+.map-side-link {
   display: none;
 }
 
@@ -758,6 +767,88 @@ body.home-page .map-note {
 }
 
 @media (min-width: 1024px) {
+  body.home-page:not(.region-page) .hero {
+    display: none;
+  }
+
+  body.home-page:not(.region-page) .map-shell {
+    display: grid;
+    grid-template-columns: clamp(150px, 16vw, 220px) minmax(0, 1fr) clamp(150px, 16vw, 220px);
+    grid-template-rows: auto auto;
+    gap: 12px;
+    align-items: start;
+    overflow-x: auto;
+    overflow-y: auto;
+  }
+
+  body.home-page:not(.region-page) .map-side-link {
+    position: relative;
+    width: clamp(150px, 16vw, 220px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    background: var(--side-bg) center / cover no-repeat;
+    display: block;
+    z-index: 4;
+    overflow: hidden;
+    align-self: stretch;
+    height: 100%;
+    min-height: 0;
+  }
+
+  body.home-page:not(.region-page) .map-side-link-left {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  body.home-page:not(.region-page) .map-side-link-right {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  body.home-page:not(.region-page) .map-side-logo {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: clamp(64px, 7vw, 96px);
+    height: auto;
+    border-radius: 22px;
+  }
+
+  body.home-page:not(.region-page) .map-side-char {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    font-family: "秀英明朝", "Yu Mincho", "Hiragino Mincho ProN", serif;
+    font-size: clamp(42px, 5vw, 72px);
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.88);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
+  }
+
+  body.home-page:not(.region-page) .japan-map-area {
+    grid-column: 2;
+    grid-row: 1;
+    width: max(100%, var(--map-min-inline));
+    max-width: none !important;
+    margin: 0;
+    height: auto !important;
+    aspect-ratio: 1400 / 1320;
+    align-self: start;
+  }
+
+  body.home-page:not(.region-page) .map-note {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
+  }
+
+  body.home-page:not(.region-page) .hero-link {
+    display: none !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
+  }
+
   .map-hotspot {
     width: 72px;
     height: 72px;
