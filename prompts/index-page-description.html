@@ -1,190 +1,573 @@
 <!doctype html>
 <html lang="ja">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Homeページ構成説明 | NIPPON AROMA MAP</title>
+  <title>Home | NIPPON AROMA MAP (Standalone Wireframe)</title>
   <style>
     :root {
-      --bg: #f5f2ec;
       --paper: #ffffff;
-      --ink: #222;
-      --muted: #666;
+      --ink: #1d1d1f;
+      --muted: #666666;
       --line: #d8d0c0;
-      --accent: #b34f2e;
+      --accent: #c23c2a;
+      --header-h: 72px;
+      --breadcrumb-h: 24px;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
       color: var(--ink);
-      background: linear-gradient(180deg, #faf7f1 0%, var(--bg) 100%);
-      line-height: 1.65;
+      background: linear-gradient(180deg, #fbf8f2 0%, #f2efe8 100%);
+      height: 100dvh;
+      overflow: hidden;
     }
-    .wrap {
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
       width: min(1120px, 92vw);
-      margin: 20px auto 36px;
+      margin: 0 auto;
+    }
+
+    .top-breadcrumb {
+      position: fixed;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1001;
+      height: var(--breadcrumb-h);
+      width: min(1024px, 92vw);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .site-header {
+      position: fixed;
+      inset: var(--breadcrumb-h) 0 auto 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      border-bottom: 1px solid var(--line);
+      height: var(--header-h);
+    }
+
+    .nav-row {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .logo {
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    .mobile-lantern {
+      width: 52px;
+      height: 52px;
+      border-radius: 45% 45% 40% 40%;
+      border: 2px solid var(--ink);
+      background: radial-gradient(circle at 50% 40%, #ffe9ba, #f1c264);
+      display: grid;
+      place-items: center;
+      font-size: 12px;
+      cursor: pointer;
+    }
+
+    .pc-lanterns {
+      display: none;
+      gap: 8px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .pc-lanterns a {
+      padding: 8px 12px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff2d9;
+      font-size: 12px;
+      white-space: nowrap;
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: calc(var(--header-h) + var(--breadcrumb-h));
+      right: 4vw;
+      left: 4vw;
       background: var(--paper);
       border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 18px;
+      border-radius: 12px;
+      padding: 12px;
+      transform-origin: top right;
+      transform: scaleY(0);
+      opacity: 0;
+      pointer-events: none;
+      transition: transform .25s ease, opacity .25s ease;
     }
-    h1, h2, h3 {
-      margin: 0 0 10px;
-      line-height: 1.4;
+
+    .mobile-menu.is-open {
+      transform: scaleY(1);
+      opacity: 1;
+      pointer-events: auto;
     }
-    h1 { font-size: clamp(22px, 3.2vw, 30px); }
-    h2 { font-size: clamp(18px, 2.5vw, 22px); margin-top: 24px; }
-    h3 { font-size: 16px; margin-top: 14px; }
-    p { margin: 0 0 10px; }
-    code {
-      background: #f1ede4;
-      border: 1px solid #e0d8c8;
-      border-radius: 5px;
-      padding: 1px 5px;
-      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
-      font-size: 0.94em;
+
+    .brand-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 8px;
     }
-    .note {
-      border-left: 4px solid var(--accent);
-      background: #fff8ef;
-      padding: 10px 12px;
-      border-radius: 6px;
-      margin-bottom: 12px;
+
+    .brand-list a {
+      display: block;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 8px 12px;
+      background: #fff7e6;
     }
-    .section-box {
+
+    .page-wrap {
+      height: 100dvh;
+      padding-top: calc(var(--header-h) + var(--breadcrumb-h));
+      padding-bottom: var(--fixed-nav-content-h, 0px);
+    }
+
+    main.container {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+      gap: 12px;
+      padding-top: 12px;
+      padding-bottom: 12px;
+    }
+
+    .hero {
+      position: relative;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      flex: 0 0 auto;
+      overflow: hidden;
+    }
+
+    .hero-placeholder {
+      border: 2px dashed #b9ae98;
+      border-radius: 12px;
+      min-height: 160px;
+      background: #fffaf0;
+      display: grid;
+      place-items: center;
+      color: #6f644f;
+      text-align: center;
+      padding: 10px;
+    }
+
+    .hero-logo-placeholder {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      z-index: 2;
+      border: 1px dashed #b9ae98;
+      border-radius: 12px;
+      width: clamp(92px, 16vw, 154px);
+      aspect-ratio: 1 / 1;
+      text-align: center;
+      font-size: 13px;
+      background: rgba(255, 255, 255, 0.94);
+      display: grid;
+      place-items: center;
+      padding: 8px;
+    }
+
+    .hero-link-placeholder {
+      position: absolute;
+      inset: 14px;
+      z-index: 1;
+      border-radius: 12px;
+      pointer-events: none;
+    }
+
+    .logo-dim {
+      font-size: 11px;
+      line-height: 1.35;
+      color: #665d4a;
+      margin-top: 4px;
+    }
+
+    .spec-panel {
+      margin-top: 10px;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: #fffdf7;
+      padding: 8px 10px;
+      font-size: 11px;
+      line-height: 1.45;
+      color: #5f5544;
+    }
+
+    .spec-panel h2 {
+      font-size: 12px;
+      margin: 0 0 4px;
+      color: #4d4334;
+    }
+
+    .spec-list {
+      margin: 0;
+      padding-left: 16px;
+    }
+
+    .map-shell {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 14px;
+      flex: 1 1 auto;
+      min-height: 0;
+      display: flex;
+    }
+
+    .japan-map-area {
+      position: relative;
+      width: 100%;
       border: 1px solid var(--line);
       border-radius: 12px;
-      padding: 14px;
-      margin-top: 12px;
-      background: #fffdf8;
-    }
-    .ui-line {
-      border: 1px dashed #c8bca7;
-      border-radius: 10px;
-      padding: 10px;
       background: #fff;
-      margin-top: 8px;
+      aspect-ratio: 816 / 768;
+      min-height: 320px;
+      overflow: hidden;
     }
-    .pill-row {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 8px;
-    }
-    .pill {
-      border: 1px solid #d6cab6;
-      border-radius: 999px;
-      background: #fff4df;
-      padding: 5px 10px;
-      font-size: 13px;
-    }
-    .placeholder {
+
+    .japan-map-placeholder {
+      position: absolute;
+      inset: 0;
       border: 2px dashed #b9ae98;
-      background: #fbf8f2;
-      border-radius: 10px;
-      color: #6c624f;
-      padding: 12px;
-      text-align: center;
-      margin-top: 8px;
-    }
-    .placeholder.large { min-height: 180px; display: grid; place-items: center; }
-    .hotspots {
+      border-radius: 12px;
+      margin: 10px;
+      background: #fffaf0;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-      gap: 8px;
-      margin-top: 10px;
+      place-items: center;
+      color: #6f644f;
+      text-align: center;
+      padding: 14px;
     }
-    .spot {
-      border: 1px solid #d6cab6;
-      background: #fff;
+
+    .map-hotspot {
+      position: absolute;
+      min-width: 70px;
+      border: 1px solid #cdbfaa;
       border-radius: 8px;
-      padding: 8px;
-      font-size: 13px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 5px 6px;
+      font-size: 11px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+      color: #514939;
     }
-    .meta {
-      margin-top: 22px;
-      padding-top: 12px;
-      border-top: 1px solid #e7dfd1;
+
+    .map-hotspot.is-empty {
+      opacity: 0.65;
+      background: #f3f1ec;
+    }
+
+    .spot-hokkaido {
+      top: 14%;
+      right: 20%;
+    }
+
+    .spot-tohoku {
+      top: 34%;
+      right: 23%;
+    }
+
+    .spot-kanto {
+      top: 46%;
+      right: 26%;
+    }
+
+    .spot-chubu {
+      top: 52%;
+      right: 34%;
+    }
+
+    .spot-kinki {
+      top: 57%;
+      right: 42%;
+    }
+
+    .spot-chugoku {
+      top: 58%;
+      right: 52%;
+    }
+
+    .spot-shikoku {
+      top: 66%;
+      right: 44%;
+    }
+
+    .spot-kyushu {
+      top: 69%;
+      right: 61%;
+    }
+
+    .fixed-nav {
+      position: fixed;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 1001;
+      background: #fff;
+      border-top: 1px solid var(--line);
+    }
+
+    .fixed-nav .container.fixed-nav-content {
+      width: min(1120px, 92vw);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 0;
+    }
+
+    .fixed-nav-accordions {
+      display: flex;
+      gap: 10px;
+      align-items: stretch;
+    }
+
+    .fixed-nav-accordion {
+      flex: 0 0 calc((100% - 20px) / 3);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fffaf0;
+      position: relative;
+    }
+
+    .fixed-nav-accordion summary {
+      list-style: none;
+      cursor: pointer;
+      width: 100%;
+      padding: 8px 10px;
+      font-size: 12px;
+      text-align: center;
+    }
+
+    .fixed-nav-accordion .inner {
+      display: none;
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: calc(100% + 6px);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #fff;
+      padding: 8px 10px;
+      font-size: 12px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+    }
+
+    .fixed-nav-accordion[open] .inner {
+      display: grid;
+      gap: 6px;
+    }
+
+    .meta-note {
+      position: fixed;
+      left: 10px;
+      top: calc(var(--breadcrumb-h) + var(--header-h) + 8px);
+      z-index: 1100;
+      background: rgba(255, 255, 255, 0.92);
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 6px 8px;
+      font-size: 11px;
       color: var(--muted);
-      font-size: 13px;
+      max-width: min(280px, 70vw);
     }
-    ul { margin: 0; padding-left: 1.2em; }
+
+    @media (min-width: 1024px) {
+
+      .mobile-lantern,
+      .mobile-menu,
+      #menuToggle {
+        display: none;
+      }
+
+      .pc-lanterns {
+        display: flex;
+        max-width: 72%;
+      }
+    }
   </style>
 </head>
-<body>
-  <main class="wrap">
-    <h1>現在の <code>index.html</code> 説明ページ</h1>
-    <p class="note">
-      このファイルは <code>C:\academia\src\Web制作総合演習\index.html</code> の構造を説明するための資料です。<br>
-      画像は参照せず、すべてプレースホルダー表示に置き換えています。
-    </p>
 
-    <h2>1. ページ全体構成</h2>
-    <div class="section-box">
-      <ul>
-        <li>上部にパンくず: <code>Home</code></li>
-        <li>固定ヘッダー: ロゴ + ブランドナビ（PC）+ 提灯ボタン（SP）+ モバイルメニュー</li>
-        <li>メイン: ヒーロー領域 + 日本地図エリア（地方リンク）</li>
-        <li>下部固定ナビ: <code>Info / Legal / Support</code> のアコーディオン</li>
+<body class="home-page">
+  <nav class="top-breadcrumb" aria-label="パンくず">
+    <a href="#">Home</a>
+  </nav>
+
+  <header class="site-header">
+    <div class="container nav-row">
+      <a class="logo" href="#">NIPPON AROMA MAP</a>
+      <button id="menuToggle" class="mobile-lantern" aria-expanded="false" aria-controls="mobileMenu">提灯</button>
+      <nav class="pc-lanterns" aria-label="ブランド">
+        <a href="#">ブランドA</a>
+        <a href="#">ブランドB</a>
+        <a href="#">ブランドC</a>
+        <a href="#">ブランドD</a>
+        <a href="#">ブランドE</a>
+      </nav>
+    </div>
+    <nav id="mobileMenu" class="mobile-menu" aria-label="ブランドメニュー">
+      <ul class="brand-list">
+        <li><a href="#">ブランドA</a></li>
+        <li><a href="#">ブランドB</a></li>
+        <li><a href="#">ブランドC</a></li>
+        <li><a href="#">ブランドD</a></li>
+        <li><a href="#">ブランドE</a></li>
       </ul>
-    </div>
+    </nav>
+  </header>
 
-    <h2>2. ヘッダー周辺</h2>
-    <div class="section-box">
-      <div class="ui-line">パンくず: Home</div>
-      <div class="ui-line">
-        ロゴ: NIPPON AROMA MAP
-        <div class="pill-row">
-          <span class="pill">ブランドA</span>
-          <span class="pill">ブランドB</span>
-          <span class="pill">ブランドC</span>
-          <span class="pill">ブランドD</span>
-          <span class="pill">ブランドE</span>
+  <div class="page-wrap">
+    <main class="container">
+      <article class="hero hero-cover">
+        <div class="hero-placeholder">ヒーロー背景画像プレースホルダー<br>（香りの工房のビジュアル）</div>
+        <a class="hero-link-placeholder" href="#" aria-hidden="true" tabindex="-1"></a>
+        <!-- 本来は image/roheraロゴ.png を重ねて表示 -->
+        <div class="hero-logo-placeholder">
+          <div>rohera ロゴ<br>正方形</div>
+          <div id="logoSizeStat" class="logo-dim">size: --px / --%</div>
         </div>
+        <section class="spec-panel" aria-label="寸法注記">
+          <!-- 本来は表示されない -->
+          <h2>寸法注記（% と px）</h2>
+          <ul class="spec-list">
+            <li>ロゴ: <code>width = height = clamp(92px, 16vw, 154px)</code>（正方形）</li>
+            <li>ロゴ位置: <code>top: 22px / left: 22px</code></li>
+            <li>ヘッダー: <code>72px</code>、パンくず: <code>24px</code>、合計: <code>96px</code></li>
+            <li>ヒーロー内リンク層: <code>inset: 14px</code>（上下左右）</li>
+            <li>地図ホットスポット位置: <code>top/right = %</code> 指定、ラベル最小幅: <code>70px</code></li>
+            <li>固定ナビ3分割: <code>calc((100% - 20px) / 3)</code></li>
+          </ul>
+        </section>
+      </article>
+
+      <section class="map-shell">
+        <div class="japan-map-area" aria-label="日本地図 地方リンク">
+          <!-- 本来は image/japanmap.png を表示 -->
+          <div class="japan-map-placeholder">日本地図画像プレースホルダー</div>
+
+          <!-- 本来は hokkaido/image/wahakka/北海道和薄荷.png をアイコン表示 -->
+          <a class="map-hotspot spot-hokkaido" href="#" aria-label="北海道へ（1件）">北海道<br>1件<br>(top 14% / right 20%)</a>
+          <!-- 本来は tohoku/image/shisso/凍餅しっそーくん.png をアイコン表示 -->
+          <a class="map-hotspot spot-tohoku" href="#" aria-label="東北へ（1件）">東北<br>1件<br>(top 34% / right 23%)</a>
+          <!-- 本来は kanto/image/asakusashop/浅草お兄さん.png をアイコン表示 -->
+          <a class="map-hotspot spot-kanto" href="#" aria-label="関東へ（1件）">関東<br>1件<br>(top 46% / right 26%)</a>
+          <!-- 本来は chubu/image/kashimo/加子母ひのき.png をアイコン表示 -->
+          <a class="map-hotspot spot-chubu" href="#" aria-label="中部へ（3件）">中部<br>3件<br>(top 52% / right 34%)</a>
+          <!-- 本来は kinki/image/tachibana/大和橘.png をアイコン表示 -->
+          <a class="map-hotspot spot-kinki" href="#" aria-label="近畿へ（2件）">近畿<br>2件<br>(top 57% / right 42%)</a>
+          <!-- 本来は chugoku/image/chugoku.png をアイコン表示（準備中） -->
+          <a class="map-hotspot spot-chugoku is-empty" href="#" aria-label="中国（準備中）">中国<br>0件<br>(top 58% / right
+            52%)</a>
+          <!-- 本来は shikoku/image/tosabuntan/土佐文旦.png をアイコン表示 -->
+          <a class="map-hotspot spot-shikoku" href="#" aria-label="四国へ（1件）">四国<br>1件<br>(top 66% / right 44%)</a>
+          <!-- 本来は kyushu/image/kyushu.png をアイコン表示（準備中） -->
+          <a class="map-hotspot spot-kyushu is-empty" href="#" aria-label="九州（準備中）">九州<br>0件<br>(top 69% / right
+            61%)</a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <nav class="fixed-nav" aria-label="固定ナビ">
+    <div class="container fixed-nav-content">
+      <div class="fixed-nav-accordions">
+        <details class="fixed-nav-accordion">
+          <summary>Info</summary>
+          <div class="inner">
+            <a href="#">概要</a>
+            <a href="#">お問合せ</a>
+          </div>
+        </details>
+        <details class="fixed-nav-accordion">
+          <summary>Legal</summary>
+          <div class="inner">
+            <a href="#">プライバシー<br>ポリシー</a>
+            <a href="#">利用規約</a>
+          </div>
+        </details>
+        <details class="fixed-nav-accordion">
+          <summary>Support</summary>
+          <div class="inner">
+            <a href="#">FAQ</a>
+            <a href="#">配送・返品</a>
+          </div>
+        </details>
       </div>
-      <div class="ui-line">モバイル時: 提灯ボタンでブランド一覧を開閉</div>
     </div>
+  </nav>
 
-    <h2>3. ヒーロー領域</h2>
-    <div class="section-box">
-      <!-- 本来は kanto/image/asakusashop/香りの工房.png を背景にしたヒーロー画像 -->
-      <div class="placeholder large">ヒーロー背景画像プレースホルダー（香りの工房のビジュアル）</div>
-      <!-- 本来は image/roheraロゴ.png（rohera ロゴ画像） -->
-      <div class="placeholder">ロゴ画像プレースホルダー（rohera ロゴ）</div>
-      <p>ヒーロー全体がリンク化され、予約ページ遷移を想定した構造です。</p>
-    </div>
+  <script>
+    (() => {
+      const toggle = document.getElementById('menuToggle');
+      const menu = document.getElementById('mobileMenu');
+      if (!toggle || !menu) return;
+      toggle.addEventListener('click', () => {
+        const open = menu.classList.toggle('is-open');
+        toggle.setAttribute('aria-expanded', String(open));
+      });
+    })();
 
-    <h2>4. 日本地図 + 地方ホットスポット</h2>
-    <div class="section-box">
-      <!-- 本来は image/japanmap.png（日本地図画像） -->
-      <div class="placeholder large">日本地図画像プレースホルダー</div>
-      <h3>ホットスポット（件数表示つき）</h3>
-      <div class="hotspots">
-        <div class="spot">北海道: 1件</div>
-        <div class="spot">東北: 1件</div>
-        <div class="spot">関東: 1件</div>
-        <div class="spot">中部: 3件</div>
-        <div class="spot">近畿: 2件</div>
-        <div class="spot">中国: 0件（準備中）</div>
-        <div class="spot">四国: 1件</div>
-        <div class="spot">九州: 0件（準備中）</div>
-      </div>
-      <p>各地方のアイコン画像も本来は表示されますが、ここでは省略しています。</p>
-      <!-- 例: hokkaido/image/wahakka/北海道和薄荷.png, kanto/image/asakusashop/浅草お兄さん.png など -->
-    </div>
+    (() => {
+      const root = document.documentElement;
+      const content = document.querySelector('.fixed-nav .fixed-nav-content');
+      if (!content) return;
+      const syncFixedNavHeight = () => {
+        const height = Math.ceil(content.getBoundingClientRect().height);
+        root.style.setProperty('--fixed-nav-content-h', height + 'px');
+      };
+      syncFixedNavHeight();
+      window.addEventListener('resize', syncFixedNavHeight);
+      content.querySelectorAll('details').forEach((el) => {
+        el.addEventListener('toggle', syncFixedNavHeight);
+      });
+    })();
 
-    <h2>5. 下部固定ナビ（アコーディオン）</h2>
-    <div class="section-box">
-      <div class="pill-row">
-        <span class="pill">Info: 概要 / お問合せ</span>
-        <span class="pill">Legal: プライバシーポリシー / 利用規約</span>
-        <span class="pill">Support: FAQ / 配送・返品</span>
-      </div>
-      <p>画面下に固定され、<code>details/summary</code> で開閉するUIです。</p>
-    </div>
-
-    <p class="meta">作成ファイル: prompts/index-page-description.html</p>
-  </main>
+    (() => {
+      const logo = document.querySelector('.hero-logo-placeholder');
+      const stat = document.getElementById('logoSizeStat');
+      if (!logo || !stat) return;
+      const render = () => {
+        const rect = logo.getBoundingClientRect();
+        const vh = window.innerHeight || 1;
+        const vw = window.innerWidth || 1;
+        const hPct = (rect.height / vh) * 100;
+        const wPct = (rect.width / vw) * 100;
+        stat.textContent = `size: ${Math.round(rect.width)}px x ${Math.round(rect.height)}px / page: ${wPct.toFixed(1)}%W, ${hPct.toFixed(1)}%H`;
+      };
+      render();
+      window.addEventListener('resize', render);
+    })();
+  </script>
 </body>
+
 </html>
