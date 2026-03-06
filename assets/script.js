@@ -56,6 +56,28 @@
 })();
 
 (() => {
+  const syncHeroMinHeight = () => {
+    document.querySelectorAll('.hero-cover').forEach((hero) => {
+      const logo = hero.querySelector('.hero-logo');
+      if (!logo) return;
+      const logoHeight = Math.ceil(logo.getBoundingClientRect().height);
+      if (!logoHeight) return;
+      // top(14px) + bottom(14px) + logo height
+      hero.style.setProperty('--hero-min-h', `${logoHeight + 28}px`);
+    });
+  };
+
+  document.querySelectorAll('.hero-logo').forEach((logo) => {
+    if (!logo.complete) {
+      logo.addEventListener('load', syncHeroMinHeight, { once: true });
+    }
+  });
+
+  syncHeroMinHeight();
+  window.addEventListener('resize', syncHeroMinHeight);
+})();
+
+(() => {
   // Keep the oversized map centered in its scroll container.
   const centerMapShell = () => {
     document.querySelectorAll('.map-shell').forEach((shell) => {

@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Homeページ構成説明 | NIPPON AROMA MAP</title>
+  <style>
+    :root {
+      --bg: #f5f2ec;
+      --paper: #ffffff;
+      --ink: #222;
+      --muted: #666;
+      --line: #d8d0c0;
+      --accent: #b34f2e;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: "Hiragino Sans", "Yu Gothic", sans-serif;
+      color: var(--ink);
+      background: linear-gradient(180deg, #faf7f1 0%, var(--bg) 100%);
+      line-height: 1.65;
+    }
+    .wrap {
+      width: min(1120px, 92vw);
+      margin: 20px auto 36px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px;
+    }
+    h1, h2, h3 {
+      margin: 0 0 10px;
+      line-height: 1.4;
+    }
+    h1 { font-size: clamp(22px, 3.2vw, 30px); }
+    h2 { font-size: clamp(18px, 2.5vw, 22px); margin-top: 24px; }
+    h3 { font-size: 16px; margin-top: 14px; }
+    p { margin: 0 0 10px; }
+    code {
+      background: #f1ede4;
+      border: 1px solid #e0d8c8;
+      border-radius: 5px;
+      padding: 1px 5px;
+      font-family: ui-monospace, "Cascadia Code", Consolas, monospace;
+      font-size: 0.94em;
+    }
+    .note {
+      border-left: 4px solid var(--accent);
+      background: #fff8ef;
+      padding: 10px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+    .section-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px;
+      margin-top: 12px;
+      background: #fffdf8;
+    }
+    .ui-line {
+      border: 1px dashed #c8bca7;
+      border-radius: 10px;
+      padding: 10px;
+      background: #fff;
+      margin-top: 8px;
+    }
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .pill {
+      border: 1px solid #d6cab6;
+      border-radius: 999px;
+      background: #fff4df;
+      padding: 5px 10px;
+      font-size: 13px;
+    }
+    .placeholder {
+      border: 2px dashed #b9ae98;
+      background: #fbf8f2;
+      border-radius: 10px;
+      color: #6c624f;
+      padding: 12px;
+      text-align: center;
+      margin-top: 8px;
+    }
+    .placeholder.large { min-height: 180px; display: grid; place-items: center; }
+    .hotspots {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+      gap: 8px;
+      margin-top: 10px;
+    }
+    .spot {
+      border: 1px solid #d6cab6;
+      background: #fff;
+      border-radius: 8px;
+      padding: 8px;
+      font-size: 13px;
+    }
+    .meta {
+      margin-top: 22px;
+      padding-top: 12px;
+      border-top: 1px solid #e7dfd1;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    ul { margin: 0; padding-left: 1.2em; }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <h1>現在の <code>index.html</code> 説明ページ</h1>
+    <p class="note">
+      このファイルは <code>C:\academia\src\Web制作総合演習\index.html</code> の構造を説明するための資料です。<br>
+      画像は参照せず、すべてプレースホルダー表示に置き換えています。
+    </p>
+
+    <h2>1. ページ全体構成</h2>
+    <div class="section-box">
+      <ul>
+        <li>上部にパンくず: <code>Home</code></li>
+        <li>固定ヘッダー: ロゴ + ブランドナビ（PC）+ 提灯ボタン（SP）+ モバイルメニュー</li>
+        <li>メイン: ヒーロー領域 + 日本地図エリア（地方リンク）</li>
+        <li>下部固定ナビ: <code>Info / Legal / Support</code> のアコーディオン</li>
+      </ul>
+    </div>
+
+    <h2>2. ヘッダー周辺</h2>
+    <div class="section-box">
+      <div class="ui-line">パンくず: Home</div>
+      <div class="ui-line">
+        ロゴ: NIPPON AROMA MAP
+        <div class="pill-row">
+          <span class="pill">ブランドA</span>
+          <span class="pill">ブランドB</span>
+          <span class="pill">ブランドC</span>
+          <span class="pill">ブランドD</span>
+          <span class="pill">ブランドE</span>
+        </div>
+      </div>
+      <div class="ui-line">モバイル時: 提灯ボタンでブランド一覧を開閉</div>
+    </div>
+
+    <h2>3. ヒーロー領域</h2>
+    <div class="section-box">
+      <!-- 本来は kanto/image/asakusashop/香りの工房.png を背景にしたヒーロー画像 -->
+      <div class="placeholder large">ヒーロー背景画像プレースホルダー（香りの工房のビジュアル）</div>
+      <!-- 本来は image/roheraロゴ.png（rohera ロゴ画像） -->
+      <div class="placeholder">ロゴ画像プレースホルダー（rohera ロゴ）</div>
+      <p>ヒーロー全体がリンク化され、予約ページ遷移を想定した構造です。</p>
+    </div>
+
+    <h2>4. 日本地図 + 地方ホットスポット</h2>
+    <div class="section-box">
+      <!-- 本来は image/japanmap.png（日本地図画像） -->
+      <div class="placeholder large">日本地図画像プレースホルダー</div>
+      <h3>ホットスポット（件数表示つき）</h3>
+      <div class="hotspots">
+        <div class="spot">北海道: 1件</div>
+        <div class="spot">東北: 1件</div>
+        <div class="spot">関東: 1件</div>
+        <div class="spot">中部: 3件</div>
+        <div class="spot">近畿: 2件</div>
+        <div class="spot">中国: 0件（準備中）</div>
+        <div class="spot">四国: 1件</div>
+        <div class="spot">九州: 0件（準備中）</div>
+      </div>
+      <p>各地方のアイコン画像も本来は表示されますが、ここでは省略しています。</p>
+      <!-- 例: hokkaido/image/wahakka/北海道和薄荷.png, kanto/image/asakusashop/浅草お兄さん.png など -->
+    </div>
+
+    <h2>5. 下部固定ナビ（アコーディオン）</h2>
+    <div class="section-box">
+      <div class="pill-row">
+        <span class="pill">Info: 概要 / お問合せ</span>
+        <span class="pill">Legal: プライバシーポリシー / 利用規約</span>
+        <span class="pill">Support: FAQ / 配送・返品</span>
+      </div>
+      <p>画面下に固定され、<code>details/summary</code> で開閉するUIです。</p>
+    </div>
+
+    <p class="meta">作成ファイル: prompts/index-page-description.html</p>
+  </main>
+</body>
+</html>

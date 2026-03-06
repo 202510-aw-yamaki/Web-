@@ -138,36 +138,57 @@ a {
 }
 
 .hero {
+  position: relative;
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 16px;
   padding: 20px;
   margin-bottom: 16px;
-}
-
-.hero-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  flex-wrap: nowrap;
-}
-
-.hero-top h1 {
-  flex: 1 1 72%;
-  min-width: 0;
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
 }
 
-.hero h1 {
+.hero-cover {
+  min-height: var(--hero-min-h, 176px);
+  display: flex;
+  align-items: flex-end;
+  background:
+    linear-gradient(180deg, rgba(0, 0, 0, 0.08) 0%, rgba(0, 0, 0, 0.52) 100%),
+    var(--hero-bg) center / cover no-repeat;
+}
+
+.hero-link {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.hero-logo {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 2;
+  width: clamp(92px, 16vw, 154px);
+  height: auto;
+  object-fit: contain;
+  border-radius: 30px;
+  pointer-events: none;
+}
+
+.hero-copy {
+  display: none;
+}
+
+.hero-copy h1 {
   margin: 0;
   font-size: clamp(20px, 4vw, 32px);
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .hero-kousaku {
   margin: 8px 0 0;
+  color: #fff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.45);
 }
 
 .cta-btn {
@@ -179,11 +200,8 @@ a {
   margin-top: 8px;
 }
 
-.hero-top .cta-btn {
-  flex: 0 0 28%;
-  text-align: center;
-  white-space: nowrap;
-  margin-top: 0;
+.hero-cta {
+  display: none;
 }
 
 .breadcrumb {
@@ -814,6 +832,7 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
+
 
 
 
