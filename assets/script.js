@@ -54,3 +54,20 @@
     });
   });
 })();
+
+(() => {
+  // Keep the oversized map centered in its scroll container.
+  const centerMapShell = () => {
+    document.querySelectorAll('.map-shell').forEach((shell) => {
+      if (shell.scrollWidth > shell.clientWidth) {
+        shell.scrollLeft = Math.floor((shell.scrollWidth - shell.clientWidth) / 2);
+      }
+      if (shell.scrollHeight > shell.clientHeight) {
+        shell.scrollTop = Math.floor((shell.scrollHeight - shell.clientHeight) / 2);
+      }
+    });
+  };
+
+  centerMapShell();
+  window.addEventListener('resize', centerMapShell);
+})();
