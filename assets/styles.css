@@ -20,7 +20,7 @@ body {
   background: linear-gradient(180deg, #fbf8f2 0%, #f2efe8 100%);
 }
 
-body.home-page:not(.region-page) {
+body.home-page {
   background: #e4e1da url("../image/香りの探求の背景.png") center top / cover no-repeat fixed;
 }
 
@@ -771,7 +771,7 @@ body.home-page .map-note {
     display: none;
   }
 
-  body.home-page:not(.region-page) .map-shell {
+  body.home-page .map-shell {
     display: grid;
     grid-template-columns: clamp(150px, 16vw, 220px) minmax(0, 1fr) clamp(150px, 16vw, 220px);
     grid-template-rows: auto auto;
@@ -781,7 +781,7 @@ body.home-page .map-note {
     overflow-y: auto;
   }
 
-  body.home-page:not(.region-page) .map-side-link {
+  body.home-page .map-side-link {
     position: relative;
     width: clamp(150px, 16vw, 220px);
     border-radius: 20px;
@@ -795,17 +795,17 @@ body.home-page .map-note {
     min-height: 0;
   }
 
-  body.home-page:not(.region-page) .map-side-link-left {
+  body.home-page .map-side-link-left {
     grid-column: 1;
     grid-row: 1;
   }
 
-  body.home-page:not(.region-page) .map-side-link-right {
+  body.home-page .map-side-link-right {
     grid-column: 3;
     grid-row: 1;
   }
 
-  body.home-page:not(.region-page) .map-side-logo {
+  body.home-page .map-side-logo {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -814,7 +814,7 @@ body.home-page .map-note {
     border-radius: 22px;
   }
 
-  body.home-page:not(.region-page) .map-side-char {
+  body.home-page .map-side-char {
     position: absolute;
     inset: 0;
     display: grid;
@@ -826,7 +826,7 @@ body.home-page .map-note {
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.18);
   }
 
-  body.home-page:not(.region-page) .japan-map-area {
+  body.home-page .japan-map-area {
     grid-column: 2;
     grid-row: 1;
     width: max(100%, var(--map-min-inline));
@@ -837,13 +837,13 @@ body.home-page .map-note {
     align-self: start;
   }
 
-  body.home-page:not(.region-page) .map-note {
+  body.home-page .map-note {
     grid-column: 1 / -1;
     grid-row: 2;
     margin: 0;
   }
 
-  body.home-page:not(.region-page) .hero-link {
+  body.home-page .hero-link {
     display: none !important;
     visibility: hidden !important;
     pointer-events: none !important;
@@ -950,3 +950,4 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
+
