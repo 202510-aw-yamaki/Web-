@@ -101,7 +101,7 @@
     - https://www.wanowa.co/kokuzoyuzu
 - 近畿（ページタイトルは「関西」）
   - 京都府相楽郡: 和束茶
-    - https://www.wanowa.co/wadukacha
+    - https://www.wanowa.co/wazukacha
   - 奈良県吉野町明日香村: 大和橘
     - https://www.wanowa.co/yamatotachibana
 - 四国
@@ -144,3 +144,4 @@
 - 多数のブランド名リンク（HA TEN KO など）は同一ドメイン（wanowa.co）に集約されている暫定実装です。
 
 以上が、現在の wireframe 構成とサイトマップの全体像です。
+

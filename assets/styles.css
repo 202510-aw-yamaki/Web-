@@ -313,7 +313,7 @@ a {
 }
 
 /* POI位置調整: 近畿ページ 和束茶 */
-.map-poi-btn-kinki-wadukacha {
+.map-poi-btn-kinki-wazuka-tea {
   top: 35%;
   left: 60%;
 }
@@ -809,4 +809,5 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
+
 
