@@ -767,7 +767,7 @@ body.home-page .map-note {
 }
 
 @media (min-width: 1024px) {
-  body.home-page:not(.region-page) .hero {
+  body.home-page .hero {
     display: none;
   }
 
@@ -950,4 +950,5 @@ body.home-page .map-note {
   opacity: 1;
   mix-blend-mode: darken;
 }
+
 
